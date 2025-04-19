@@ -70,7 +70,7 @@ if st.checkbox("Run Test Cases"):
     
     input_test1 = encode(test1, reference_df)
     pred1 = model.predict(input_test1)[0]
-    st.markdown("Test Case 1 Prediction:", "**Request Accepted**" if pred1 == 1 else "**Request Rejected**")
+    st.write("Test Case 1 Prediction:", "Request Accepted" if pred1 == 1 else "Request Rejected")
     
     st.markdown("### Test Case 2")
     test2 =[{'person_age': 21.0,
@@ -93,5 +93,4 @@ if st.checkbox("Run Test Cases"):
     
     input_test2 = encode(test2, reference_df)
     pred2 = model.predict(input_test2)[0]
-    st.markdown("Test Case 2 Prediction:", "**Request Accepted**" if pred2 == 1 else "**Request Rejected**")
-
+    st.write("Test Case 2 Prediction:", "Request Accepted" if pred2 == 1 else "Request Rejected")
