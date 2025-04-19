@@ -37,7 +37,7 @@ user_input = {
     'loan_percent_income': st.number_input("Loan % of Income", value=0.2),
     'cb_person_cred_hist_length': st.number_input("Credit History Length", value=3),
     'credit_score': st.number_input("Credit Score", value=0),
-    'previous_loan_defaults_on_file': st.selectbox("Previous Loan Default?", ['Yes', 'No'])
+    'previous_loan_defaults_on_file': st.selectbox("Previous Loan Default", ['Yes', 'No'])
 }
 
 if st.button("Predict"):
@@ -48,20 +48,7 @@ if st.button("Predict"):
 
 if st.checkbox("Run Test Cases"):
     st.markdown("## Test Case 1")
-    st.write(
-    'person_age': 23.0,
-    'person_gender': 'female',
-    'person_education': 'Bachelor',
-    'person_income': 79753.0,
-    'person_emp_exp': 0,
-    'person_home_ownership': 'RENT',
-    'loan_amnt': 35000.0,
-    'loan_intent': 'MEDICAL',
-    'loan_int_rate': 15.23,
-    'loan_percent_income': 0.44,
-    'cb_person_cred_hist_length': 2.0,
-    'credit_score': 675,
-    'previous_loan_defaults_on_file': 'No')
+    
     test1 = [ {
     'person_age': 23.0,
     'person_gender': 'female',
@@ -77,6 +64,10 @@ if st.checkbox("Run Test Cases"):
     'credit_score': 675,
     'previous_loan_defaults_on_file': 'No'
     }]
+
+    for key, value in test1.items():
+    print(f"{key}: {value}")
+    
     input_test1 = encode(test1, reference_df)
     pred1 = model.predict(input_test1)[0]
     st.write("Test Case 1 Prediction:", "Request Accepted" if pred1 == 1 else "Request Rejected")
@@ -110,6 +101,11 @@ if st.checkbox("Run Test Cases"):
     'credit_score': 504,
     'previous_loan_defaults_on_file': 'Yes'
     }]
+
+    for key, value in test2.items():
+    print(f"{key}: {value}")
+    
     input_test2 = encode(test2, reference_df)
     pred2 = model.predict(input_test2)[0]
     st.write("Test Case 2 Prediction:", "Request Accepted" if pred2 == 1 else "Request Rejected")
+
