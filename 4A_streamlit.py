@@ -66,7 +66,7 @@ if st.checkbox("Run Test Cases"):
     }]
 
     for key, value in test1.items():
-    print(f"{key}: {value}")
+        print(f"{key}: {value}")
     
     input_test1 = encode(test1, reference_df)
     pred1 = model.predict(input_test1)[0]
@@ -103,7 +103,7 @@ if st.checkbox("Run Test Cases"):
     }]
 
     for key, value in test2.items():
-    print(f"{key}: {value}")
+        print(f"{key}: {value}")
     
     input_test2 = encode(test2, reference_df)
     pred2 = model.predict(input_test2)[0]
