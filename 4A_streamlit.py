@@ -73,20 +73,6 @@ if st.checkbox("Run Test Cases"):
     st.write("Test Case 1 Prediction:", "Request Accepted" if pred1 == 1 else "Request Rejected")
     
     st.markdown("### Test Case 2")
-    st.write(
-    'person_gender': 'female',
-    'person_education': 'High School',
-    'person_income': 12282.0,
-    'person_emp_exp': 0,
-    'person_home_ownership': 'OWN',
-    'loan_amnt': 1000.0,
-    'loan_intent': 'EDUCATION',
-    'loan_int_rate': 11.14,
-    'loan_percent_income': 0.08,
-    'cb_person_cred_hist_length': 2.0,
-    'credit_score': 504,
-    'previous_loan_defaults_on_file': 'Yes')
-        
     test2 =[{'person_age': 21.0,
     'person_gender': 'female',
     'person_education': 'High School',
