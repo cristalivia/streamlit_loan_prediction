@@ -48,26 +48,68 @@ if st.button("Predict"):
 
 if st.checkbox("Run Test Cases"):
     st.markdown("## Test Case 1")
-    test1 = [{
-        'person_age': 30, 'person_gender': 'male', 'person_education': 'Bachelor',
-        'person_income': 80000, 'person_emp_exp': 5, 'person_home_ownership': 'OWN',
-        'loan_amnt': 10000, 'loan_intent': 'PERSONAL', 'loan_int_rate': 10.5,
-        'loan_percent_income': 0.12, 'cb_person_cred_hist_length': 4,
-        'credit_score': 700, 'previous_loan_defaults_on_file': 'No'
+    st.write(
+    'person_age': 23.0,
+    'person_gender': 'female',
+    'person_education': 'Bachelor',
+    'person_income': 79753.0,
+    'person_emp_exp': 0,
+    'person_home_ownership': 'RENT',
+    'loan_amnt': 35000.0,
+    'loan_intent': 'MEDICAL',
+    'loan_int_rate': 15.23,
+    'loan_percent_income': 0.44,
+    'cb_person_cred_hist_length': 2.0,
+    'credit_score': 675,
+    'previous_loan_defaults_on_file': 'No')
+    test1 = [ {
+    'person_age': 23.0,
+    'person_gender': 'female',
+    'person_education': 'Bachelor',
+    'person_income': 79753.0,
+    'person_emp_exp': 0,
+    'person_home_ownership': 'RENT',
+    'loan_amnt': 35000.0,
+    'loan_intent': 'MEDICAL',
+    'loan_int_rate': 15.23,
+    'loan_percent_income': 0.44,
+    'cb_person_cred_hist_length': 2.0,
+    'credit_score': 675,
+    'previous_loan_defaults_on_file': 'No'
     }]
     input_test1 = encode(test1, reference_df)
     pred1 = model.predict(input_test1)[0]
     st.write("Test Case 1 Prediction:", "Request Accepted" if pred1 == 1 else "Request Rejected")
     
     st.markdown("### Test Case 2")
-    test2 = [{
-        'person_age': 22, 'person_gender': 'female', 'person_education': 'High School',
-        'person_income': 12000, 'person_emp_exp': 1, 'person_home_ownership': 'RENT',
-        'loan_amnt': 15000, 'loan_intent': 'DEBTCONSOLIDATION', 'loan_int_rate': 18.5,
-        'loan_percent_income': 0.9, 'cb_person_cred_hist_length': 1,
-        'credit_score': 500, 'previous_loan_defaults_on_file': 'Yes'
+    st.write(
+    'person_gender': 'female',
+    'person_education': 'High School',
+    'person_income': 12282.0,
+    'person_emp_exp': 0,
+    'person_home_ownership': 'OWN',
+    'loan_amnt': 1000.0,
+    'loan_intent': 'EDUCATION',
+    'loan_int_rate': 11.14,
+    'loan_percent_income': 0.08,
+    'cb_person_cred_hist_length': 2.0,
+    'credit_score': 504,
+    'previous_loan_defaults_on_file': 'Yes')
+        
+    test2 =[{'person_age': 21.0,
+    'person_gender': 'female',
+    'person_education': 'High School',
+    'person_income': 12282.0,
+    'person_emp_exp': 0,
+    'person_home_ownership': 'OWN',
+    'loan_amnt': 1000.0,
+    'loan_intent': 'EDUCATION',
+    'loan_int_rate': 11.14,
+    'loan_percent_income': 0.08,
+    'cb_person_cred_hist_length': 2.0,
+    'credit_score': 504,
+    'previous_loan_defaults_on_file': 'Yes'
     }]
     input_test2 = encode(test2, reference_df)
     pred2 = model.predict(input_test2)[0]
     st.write("Test Case 2 Prediction:", "Request Accepted" if pred2 == 1 else "Request Rejected")
-
